@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+    <!--Made by Crystallizer954-->
+    <head>
+        <title>AltCodes</title>   
+        <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADySURBVFhH7ZP9DoMwCMSrMdv7v4bvuDkwdNZmHweH8R9/iWkxFk64louzGWz1stiqtDnqezhvRMAi2FYSDFsKfW/xYQJ2xT/hFTDa6kKL1KdF43meJwsh3B2wtT33zQ/HICO4y3OzkAZRHPlD+AzkATWema9N/JN/Zq24TOgVgeC+BdkiYAH9lRMhKY53daCK0C7I/rkGJN4RSN1NhC5rQOD2QA87ioiAXRfYUUQ7kDYKegQsjICULlAdkMIjK4ISIMXDs69keIAaRYoJpfDUiYBJESDFH7Z1kyLA6EcBkSlAeYtAQb5ufwfNHjlzcQalvAD9DV04gi7dYAAAAABJRU5ErkJggg==">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> 
+        <style>
+            /*Made by Crystallizer954*/
+            @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+            body{
+                color:black;
+                user-select:none;
+                font-family: "Cabin", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 700;
+                font-style: normal;
+                font-variation-settings:
+                    "wdth" 100;
+            }
+            h1{
+                font-size:50px;
+                margin-block:25px;
+            }
+            button{
+                border:2px solid black;
+                border-radius:15px;
+                padding:15px;
+                background:white;
+                color:black;
+                width:10%;
+                transition:2s;
+            }
+            input{
+                border:2px solid black;
+                border-radius:15px;
+                padding:15px;
+                background:white;
+                color:black;
+                width:80%;
+                transition:0.5s;
+            }
+            button:hover{
+                cursor:pointer;
+            }
+            input:focus, button:focus{
+                outline: none;
+            }
+            .mainDiv{
+                width:50%;
+                margin-block:25px;
+            }
+            .correct{
+                border:2px solid #00ff00;
+            }
+            .failure{
+                border:2px solid #ff0000;
+            }
+            .info{
+                width:45%;
+                border:2px solid black;
+                border-radius:15px;
+                padding:15px;
+                background:white;
+                color:black;
+            }
+            .bottom{
+                position: fixed;
+                bottom: 0;
+            }
+            .material-symbols-outlined {
+              font-variation-settings:
+              'FILL' 0,
+              'wght' 400,
+              'GRAD' 0,
+              'opsz' 24
+            }
+            .bottom-left{
+                position: absolute; 
+                bottom: 5px;
+                cursor:pointer;
+            }
+            .bottom-right{
+                position:absolute;
+                bottom:5px;
+                right:5px;
+                color:#575757;
+                font-size:10px;
+            }
+            .top-right{
+                position:absolute;
+                top:5px;
+                right:5px;
+            }
+            .helpclass{
+                border:2px solid black;
+                border-radius:15px;
+                padding:15px;
+                background:white;
+                color:black;
+                width:80%;
+            }
+            table, td, th {
+                transition:1s;
+                border:1px solid black;
+                padding:5px;
+            }
+            .block{
+                display:none;
+                transition:1s;
+            }
+        </style>
+    </head>
+    <body>
+        <svg title="Help" onclick="helpEvent()" class="top-right" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+        <center>
+            <!--‎-->
+            <h1>AltCodes</h1>
+            <b id="accentation">Click the input bar below to begin.</b>
+            <div class="mainDiv">
+                <input oncopy="return false" onpaste="return false" oncut="return false" maxlength="4" placeholder="Click here to start!" onclick="inputEvent()" id="inputId" autocomplete="off"></input>
+                <button onclick="checkEvent()" title="You can also press the enter key to submit your answer.">↵</button>
+            </div>
+            <table id="table" class="block" style="text-align:center;">
+                <tr>
+                    <th>Characters</th>
+                    <th>Alt Code</th>
+                </tr>
+                <tr>
+                    <td>Á</td>
+                    <td>Alt+0193</td>
+                </tr>
+                <tr>
+                    <td>á</td>
+                    <td>Alt+0225</td>
+                </tr>
+                <tr>
+                    <td>É</td>
+                    <td>Alt+0201</td>
+                </tr>
+                <tr>
+                    <td>é</td>
+                    <td>Alt+0233</td>
+                </tr>
+                <tr>
+                    <td>Í</td>
+                    <td>Alt+0205</td>
+                </tr>
+                <tr>
+                    <td>í</td>
+                    <td>Alt+0237</td>
+                </tr>
+                <tr>
+                    <td>Ó</td>
+                    <td>Alt+0211</td>
+                </tr>
+                <tr>
+                    <td>ó</td>
+                    <td>Alt+0243</td>
+                </tr>
+                <tr>
+                    <td>Ú</td>
+                    <td>Alt+0218</td>
+                </tr>
+                <tr>
+                    <td>ú</td>
+                    <td>Alt+0250</td>
+                </tr>
+                <tr>
+                    <td>Ñ</td>
+                    <td>Alt+0209</td>
+                </tr>
+                <tr>
+                    <td>ñ</td>
+                    <td>Alt+0241</td>
+                </tr>
+                <tr>
+                    <td>Ü</td>
+                    <td>Alt+0220</td>
+                </tr>
+                <tr>
+                    <td>ü</td>
+                    <td>Alt+0252</td>
+                </tr>
+                <tr>
+                    <td>¡</td>
+                    <td>Alt+0161</td>
+                </tr>
+                <tr>
+                    <td>¿</td>
+                    <td>Alt+0191</td>
+                </tr>
+            </table>  
+        </center>
+        <div class="bottom-left" onclick="plugEvent()">
+            Crystallizer954
+        </div>
+        <div class="bottom-right">
+            Ver. 1.00
+            <!--Started on 3/29/2024, Finished on 3/31/2024 at 7:30 PM, Revisions made on 8/3/2024.-->
+        </div>
+    </body>
+    <script>
+        //Made by Crystallizer954
+        var randomNumberReturn = 0;
+        var inputNumber = 0;
+        var InputID = document.getElementById("inputId");
+        var inputCounter = 0;
+        var TitleID = document.getElementById("Title");
+        var copyToggleVar = 0;
+        var cutToggleVar = 0;
+        var pasteToggleVar = 0;
+        var helptable = document.getElementById("table");
+        var helpvar = 0;
+        var ghostnum = 0;
+        console.log('%cHello, I am glad to see that you have cracked open AltCodes!', '');
+        console.log('%cI hope that you you have fun and find what you are looking for!', '');
+        console.log ('%cAlso, type help() for a list of functions I made for you to play with!', '')
+        console.log('%c-Crystallizer954', 'color:#42f6ba; -webkit-text-stroke:0.5px; -webkit-text-stroke-color:#0a0b0b;');
+        function startEvent(){
+            var randomNumberGenerator = Math.floor(Math.random() * (17 - 1) + 1);
+            if (randomNumberGenerator == ghostnum) {
+                startEvent()
+                console.log("Repeat!")
+            } else {
+                if (randomNumberGenerator == 1) {
+                    console.log("1 was generated making our random letter Á!");
+                    document.getElementById("accentation").innerHTML = "Á";
+                    document.getElementById("accentation").title = "Alt+0193";
+                    return inputNumber = 1;
+                }; if (randomNumberGenerator == 2) {
+                    console.log("2 was generated making our random letter á!");
+                    document.getElementById("accentation").innerHTML = "á";
+                    document.getElementById("accentation").title = "Alt+0225";
+                    return inputNumber = 2;
+                }; if (randomNumberGenerator == 3) {
+                    console.log("3 was generated making our random letter É!");
+                    document.getElementById("accentation").innerHTML = "É";
+                    document.getElementById("accentation").title = "Alt+0201";
+                    return inputNumber = 3;
+                }; if (randomNumberGenerator == 4) {
+                    console.log("4 was generated making our random letter é!");
+                    document.getElementById("accentation").innerHTML = "é";
+                    document.getElementById("accentation").title = "Alt+0233";
+                    return inputNumber = 4;
+                }; if (randomNumberGenerator == 5) {
+                    console.log("5 was generated making our random letter Í!");
+                    document.getElementById("accentation").innerHTML = "Í";
+                    document.getElementById("accentation").title = "Alt+0205";
+                    return inputNumber = 5;
+                }; if (randomNumberGenerator == 6) {
+                    console.log("6 was generated making our random letter í!");
+                    document.getElementById("accentation").innerHTML = "í";
+                    document.getElementById("accentation").title = "Alt+0237";
+                    return inputNumber = 6;
+                }; if (randomNumberGenerator == 7) {
+                    console.log("7 was generated making our random letter Ó!");
+                    document.getElementById("accentation").innerHTML = "Ó";
+                    document.getElementById("accentation").title = "Alt+0211";
+                    return inputNumber = 7;
+                }; if (randomNumberGenerator == 8) {
+                    console.log("8 was generated making our random letter ó!");
+                    document.getElementById("accentation").innerHTML = "ó";
+                    document.getElementById("accentation").title = "Alt+0243";
+                    return inputNumber = 8;
+                }; if (randomNumberGenerator == 9) {
+                    console.log("9 was generated making our random letter Ú!");
+                    document.getElementById("accentation").innerHTML = "Ú";
+                    document.getElementById("accentation").title = "Alt+0218";
+                    return inputNumber = 9;
+                }; if (randomNumberGenerator == 10) {
+                    console.log("10 was generated making our random letter ú!");
+                    document.getElementById("accentation").innerHTML = "ú";
+                    document.getElementById("accentation").title = "Alt+0250";
+                    return inputNumber = 10;
+                }; if (randomNumberGenerator == 11) {
+                    console.log("11 was generated making our random letter Ñ!");
+                    document.getElementById("accentation").innerHTML = "Ñ";
+                    document.getElementById("accentation").title = "Alt+0209";
+                    return inputNumber = 11;
+                }; if (randomNumberGenerator == 12) {
+                    console.log("12 was generated making our random letter ñ!");
+                    document.getElementById("accentation").innerHTML = "ñ";
+                    document.getElementById("accentation").title = "Alt+0241";
+                    return inputNumber = 12;
+                }; if (randomNumberGenerator == 13) {
+                    console.log("13 was generated making our random letter Ü!");
+                    document.getElementById("accentation").innerHTML = "Ü";
+                    document.getElementById("accentation").title = "Alt+0220";
+                    return inputNumber = 13;
+                }; if (randomNumberGenerator == 14) {
+                    console.log("14 was generated making our random letter ü!");
+                    document.getElementById("accentation").innerHTML = "ü";
+                    document.getElementById("accentation").title = "Alt+0252";
+                    return inputNumber = 14;
+                }; if (randomNumberGenerator == 15) {
+                    console.log("15 was generated making our random letter ¡!");
+                    document.getElementById("accentation").innerHTML = "¡";
+                    document.getElementById("accentation").title = "Alt+0161";
+                    return inputNumber = 15;
+                }; if (randomNumberGenerator == 16) {
+                    console.log("16 was generated making our random letter ¿!");
+                    document.getElementById("accentation").innerHTML = "¿";
+                    document.getElementById("accentation").title = "Alt+0191";
+                    return inputNumber = 16;
+                };
+            }
+        }
+        function checkEvent(){
+            if (inputNumber == 1){
+                if (InputID.value === "0193" || InputID.value === "Á"){ 
+                    startEvent()
+                }
+            }if (inputNumber == 2){
+                if (InputID.value === "0225" || InputID.value === "á"){
+                    startEvent()
+                }
+            }if (inputNumber == 3){
+                if (InputID.value === "0201" || InputID.value === "É"){
+                    startEvent()
+                }
+            }if (inputNumber == 4){
+                if (InputID.value === "0233" || InputID.value === "é"){
+                    startEvent()
+                }
+            }if (inputNumber == 5){
+                if (InputID.value === "0205" || InputID.value === "Í"){
+                    startEvent()
+                }
+            }if (inputNumber == 6){
+                if (InputID.value === "0237" || InputID.value === "í"){
+                    startEvent()
+                }
+            }if (inputNumber == 7){
+                if (InputID.value === "0211" || InputID.value === "Ó"){
+                    startEvent()
+                }
+            }if (inputNumber == 8){
+                if (InputID.value === "0243" || InputID.value === "ó"){
+                    startEvent()
+                }
+            }if (inputNumber == 9){
+                if (InputID.value === "0218" || InputID.value === "Ú"){
+                    startEvent()
+                }
+            }if (inputNumber == 10){
+                if (InputID.value === "0250" || InputID.value === "ú"){
+                    startEvent()
+                }
+            }if (inputNumber == 11){
+                if (InputID.value === "0209" || InputID.value === "Ñ"){;
+                    startEvent()
+                }
+            }if (inputNumber == 12){
+                if (InputID.value === "0241" || InputID.value === "ñ"){
+                    startEvent()
+                }
+            }if (inputNumber == 13){
+                if (InputID.value === "0220" || InputID.value === "Ü"){
+                    startEvent()
+                }
+            }if (inputNumber == 14){
+                if (InputID.value === "0252" || InputID.value === "ü"){
+                    startEvent()
+                }
+            }if (inputNumber == 15){
+                if (InputID.value === "0161" || InputID.value === "¡"){
+                    startEvent()
+                }
+            }if (inputNumber == 16){
+                if (InputID.value === "0191" || InputID.value === "¿"){
+                    startEvent()
+                }
+            }
+            InputID.value = "";
+            return ghostnum = inputNumber;
+        }
+        document.onkeydown = checkKey;
+
+        function checkKey(e) {
+            if (e.keyCode == '13') {
+                checkEvent();
+            } if (e.keyCode == '110') {
+                e.preventDefault();
+                InputID.value = "";
+            }
+        }
+        function inputEvent(){
+            if (inputCounter == 0){
+                InputID.placeholder = "";
+                startEvent()
+                inputCounter = 1;
+            }
+        }
+        function plugEvent(){
+            window.open("https://linktr.ee/Crystallizer954/");
+        }
+        var InputIDplaceholder = "";
+        var randomInputSplashGenerator = Math.floor(Math.random() * (7 - 1) + 1);
+        if (randomInputSplashGenerator == 1){
+            var InputIDplaceholder = "don't use on phone!";
+        }if (randomInputSplashGenerator == 2){
+            var InputIDplaceholder = "△";
+        }if (randomInputSplashGenerator == 3){
+            var InputIDplaceholder = "有個難忘的昨天,有個快樂的今天,有個美好的明 天。南無阿彌陀佛";
+        }if (randomInputSplashGenerator == 4){
+            var InputIDplaceholder = "go tohttps://grabber.zone/";
+        }if (randomInputSplashGenerator == 5){
+            var InputIDplaceholder = "Brown Sugar Cinnamon Pop Tarts are the best kind.";
+        }if (randomInputSplashGenerator == 6){
+            var InputIDplaceholder = "subscribe to Kitty225Again on YouTube!";
+        }
+        InputID.placeholder = "Click here to start! Also, " + InputIDplaceholder;
+        function helpEvent(){
+            if (helpvar == 0){
+                helptable.classList.remove("block");
+                helpvar = 1;
+            }else{
+                helptable.classList.add("block");
+                helpvar = 0;
+            }
+        }
+    </script>
+    <!--Made by Crystallizer954-->
+</html>
