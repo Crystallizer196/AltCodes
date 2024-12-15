@@ -381,12 +381,14 @@
                 document.getElementById("input").classList.add("darkMain")
                 document.getElementById("button").classList.add("darkMain")
                 document.getElementById("table").classList.add("darkMain")
+                document.cookie = "theme=dark"
             } else {
                 themeCounter = 0;
                 document.body.classList.remove("darkTheme")
                 document.getElementById("input").classList.remove("darkMain")
                 document.getElementById("button").classList.remove("darkMain")
                 document.getElementById("table").classList.remove("darkMain")
+                document.cookie = "theme=light"
             }
         }
         function help(){
