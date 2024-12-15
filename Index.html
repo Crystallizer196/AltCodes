@@ -1,150 +1,121 @@
 <!DOCTYPE html>
-    <!--Made by Crystallizer954-->
+<html>
     <head>
-        <title>AltCodes</title>   
+        <title>Recode</title>
         <meta property="og:title" content="AltCodes" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://crystallizer196.github.io/AltCodes/Index.html" />
         <meta property="og:image" content="https://raw.githubusercontent.com/Crystallizer196/AltCodes/main/icon.png" />
         <meta property="og:description" content="AltCodes, a website to help people memorize how to type characters used in Spanish without switching to an entirely different keyboard layout!" />
         <meta name="theme-color" content="#FFFFFF">
-        <link rel="icon" href="https://raw.githubusercontent.com/Crystallizer196/AltCodes/main/favicon.png">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> 
+        <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Crystallizer196/AltCodes/main/favicon.png">
         <style>
-            /*Made by Crystallizer954*/
-            @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
             body{
-                color:black;
-                font-family: "Cabin", sans-serif;
+                user-select: none;
+                font-family: "Montserrat", sans-serif;
                 font-optical-sizing: auto;
-                font-weight: 700;
+                font-weight: 500;
                 font-style: normal;
-                font-variation-settings:
-                    "wdth" 100;
-                user-select:none;
             }
-            h1{
-                font-size:50px;
-                margin-block:25px;
+            #help{
+                cursor: pointer;
+                position: fixed;
+                top:5px;
+                right:5px;
             }
-            button{
-                border:2px solid black;
-                border-radius:15px;
-                padding:15px;
-                background:white;
-                color:black;
-                width:10%;
-                transition:2s;
+            #dark{
+                cursor: pointer;
+                position: fixed;
+                top:5px;
+                right:30px;
+            }
+            #credits{
+                position: fixed;
+                bottom: 5px;
+                left: 5px;
+                font-size: 15px;
+                transition: 1s;
+                cursor: pointer;
+            }
+            #version{
+                position: fixed;
+                bottom: 5px;
+                right: 5px;
+                font-size: 10px;
+                transition: 1s;
+            }
+            #credits:hover, #version:hover{
+                font-size: 20px;
+            }
+            #title{
+                font-size: 50px;
+                margin-block: 25px;
+            }
+            #main{
+                width: 50%;
+                margin-block: 25px;
             }
             input{
-                border:2px solid black;
-                border-radius:15px;
-                padding:15px;
-                background:white;
-                color:black;
-                width:80%;
-                transition:0.5s;
+                border: 1px solid black;
+                border-radius: 10px;
+                padding: 15px;
+                background: white;
+                color: black;
+                width: 80%;
             }
-            button:hover{
-                cursor:pointer;
+            button{
+                border:1px solid black;
+                border-radius: 10px;
+                padding: 15px;
+                background: white;
+                color: black;
+                width: 10%;
+                cursor: pointer;
+
             }
-            input:focus, button:focus{
+            #input:focus, #button:focus{
                 outline: none;
             }
-            .mainDiv{
-                width:50%;
-                margin-block:25px;
-            }
-            .info{
-                width:45%;
-                border:2px solid black;
-                border-radius:15px;
-                padding:15px;
-                background:white;
-                color:black;
-            }
-            .bottom{
+            table{
+                opacity: 0;
                 position: fixed;
-                bottom: 0;
+                top: 5px;
+                left: 5px;
+                text-align: center;
+                border: 1px solid black;
             }
-            .material-symbols-outlined {
-              font-variation-settings:
-              'FILL' 0,
-              'wght' 400,
-              'GRAD' 0,
-              'opsz' 24
+            @keyframes fadein{
+                from {opacity: 0;}
+                to {opacity: 1;}
             }
-            .linkClass{
-                position: absolute; 
-                bottom: 5px;
-                cursor:pointer;
-                transition:1s;
+            @keyframes fadeout{
+                from {opacity: 1;}
+                to {opacity: 0;}
             }
-            .linkClass:hover{
-                transition:1s;
-                font-size:20px;
+            .darkTheme, .darkMain{
+                color: white;
+                background: #1f1f1f;
+                fill: white;
             }
-            .versionClass{
-                position:absolute;
-                bottom:5px;
-                right:5px;
-                color:#575757;
-                font-size:10px;
-                transition:1s;
+            .darkMain{
+                border: 1px solid white;
             }
-            .versionClass:hover{
-                transition:1s;
-                font-size:20px;
+            .visible{
+                animation: fadein;
+                animation-duration: 250ms;
+                opacity: 1;
             }
-            .top-right{
-                position:absolute;
-                top:5px;
-                right:5px;
-            }
-            .helpclass{
-                border:2px solid black;
-                border-radius:15px;
-                padding:15px;
-                background:white;
-                color:black;
-                width:80%;
-            }
-            table, tr, td {
-                width:10%;
-                border:1px solid black;
-                padding:5px;
-                text-align:center;
-            }
-            .top-left{
-                border-radius:5px;
-                border:1px solid black;
-                background:white;
-                top:5px;
-                left:5px;
-                width:10%;
-                height:2.5%;
-                padding:10px;
-                font-size:80%;
-                text-align:center;
-                position:absolute;
-                line-height: 1.5;
-                display: inline-block;
-                vertical-align: middle;
-                border-left:5px solid #FF0000;
+            .invisible{
+                animation: fadeout;
+                animation-duration: 250ms;
+                opacity: 0;
             }
         </style>
     </head>
     <body>
-        <svg title="Help" onclick="helpEvent()" class="top-right" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-        <div class="top-left" id="reminderID">Remeber to enable num lock!</div>
-        <center>
-            <h1>AltCodes</h1>
-            <b id="accentation">Click below to begin.</b>
-            <div class="mainDiv">
-                <input oncopy="return false" onpaste="return false" oncut="return false" maxlength="4" placeholder="Click here to start!" onclick="inputEvent()" id="inputId" autocomplete="off"></input>
-                <button onclick="checkEvent()" title="You can also press the enter key to submit your answer.">↵</button>
-            </div>
-            <table id="table" style="display:none;">
+        <div>
+            <table id="table">
                 <tr>
                     <th>Characters</th>
                     <th>Alt Code</th>
@@ -213,236 +184,237 @@
                     <td>¿</td>
                     <td>Alt+0191</td>
                 </tr>
-            </table>  
-        </center>
-        <div class="linkClass" onclick="plugEvent()">
+            </table>
+        </div>
+        <div>
+            <svg id="help" onclick="help()" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="000"><path d="M478-240q21 0 35.5-14.5T528-290q0-21-14.5-35.5T478-340q-21 0-35.5 14.5T428-290q0 21 14.5 35.5T478-240Zm-36-154h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            <svg id="dark" onclick="dark()" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="000"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/></svg>
+        </div>
+        <div onclick="window.open('https://github.com/Crystallizer196')" id="credits">
             Crystallizer954
         </div>
-        <div class="versionClass">
-            Ver. 1.15
-            <!--Started AltCodes on 3/29/2024, Finished AltCodes on 3/31/2024 at 7:30 PM, Revisions made on 8/3/2024.-->
+        <div id="version">
+            Ver. 2.00
         </div>
+        <center>
+            <h1 id="title">AltCodes</h1>
+            <b id="character">⬇</b>
+            <div id="main">
+                <input onclick="begin()" id="input" oncopy="return false" onpaste="return false" oncut="return false" maxlength="4"></input>
+                <button onclick="check()" id="button">↵</button>
+            </div>
+        </center>
     </body>
     <script>
-        //This is a hot mess, I know. I plan to fix all of this in the next version, I'm just getting this one out as some of it's features are important.
-        var inputNumber = 0;
-        var InputID = document.getElementById("inputId");
-        var inputCounter = 0;
-        var TitleID = document.getElementById("Title");
-        var copyToggleVar = 0;
-        var cutToggleVar = 0;
-        var pasteToggleVar = 0;
-        var helptable = document.getElementById("table");
-        var helpvar = 0;
-        var ghostnum = 0;
-        var reminderDiv = document.getElementById("reminderID");
-        reminderDiv.style.display = "none";
-        console.log('Hello, I am glad to see that you have cracked open AltCodes!');
-        console.log('I hope that you you have fun and can learn from this project!');
-        console.log('%c-Crystallizer954', 'color:#42f6ba; -webkit-text-stroke:0.5px; -webkit-text-stroke-color:#0a0b0b;');
-        function startEvent(){
-            var randomNumberGenerator = Math.floor(Math.random() * (17 - 1) + 1);
-            if (randomNumberGenerator == ghostnum) {
-                startEvent()
+        var ghost = 0;
+        var counter = 0;
+        var themeCounter = 0;
+        var tableCounter = 0;
+        var randomInput = Math.floor(Math.random() * (6 - 1) + 1)
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for(let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+            }
+            return "";
+        }
+        if (getCookie(theme) == "dark"){
+            dark()
+        } if (getCookie(table) == "visible"){
+            help()
+        }
+        if (randomInput == 1) {
+            document.getElementById("input").placeholder = "press . on the numpad to clear your answer!";
+        } if (randomInput == 2) {
+            document.getElementById("input").placeholder = "click the ? at the top right to see a list of Alt Codes!";
+         }if (randomInput == 3) {
+            document.getElementById("input").placeholder = "you can submit your answer by pressing enter on the keyboard!";
+        } if (randomInput == 4) {
+            document.getElementById("input").placeholder = "Brown Sugar Cinnamon Pop-Tarts are the best!";
+        } if (randomInput == 5) {
+            document.getElementById("input").placeholder = "You will never be assigned the same character twice in a row.";
+        }
+        function begin(){
+            if (counter == 0) {
+                counter = 1;
+                start()
+            }
+        }
+        function start(){
+            var random = Math.floor(Math.random() * (17 - 1) + 1);
+            if (random == ghost) {
+                start()
                 console.log("Repeat!")
             } else {
-                if (randomNumberGenerator == 1) {
-                    console.log("1 was generated making our random letter Á!");
-                    document.getElementById("accentation").innerHTML = "Á";
-                    document.getElementById("accentation").title = "Alt+0193";
-                    return inputNumber = 1;
-                }; if (randomNumberGenerator == 2) {
-                    console.log("2 was generated making our random letter á!");
-                    document.getElementById("accentation").innerHTML = "á";
-                    document.getElementById("accentation").title = "Alt+0225";
-                    return inputNumber = 2;
-                }; if (randomNumberGenerator == 3) {
-                    console.log("3 was generated making our random letter É!");
-                    document.getElementById("accentation").innerHTML = "É";
-                    document.getElementById("accentation").title = "Alt+0201";
-                    return inputNumber = 3;
-                }; if (randomNumberGenerator == 4) {
-                    console.log("4 was generated making our random letter é!");
-                    document.getElementById("accentation").innerHTML = "é";
-                    document.getElementById("accentation").title = "Alt+0233";
-                    return inputNumber = 4;
-                }; if (randomNumberGenerator == 5) {
-                    console.log("5 was generated making our random letter Í!");
-                    document.getElementById("accentation").innerHTML = "Í";
-                    document.getElementById("accentation").title = "Alt+0205";
-                    return inputNumber = 5;
-                }; if (randomNumberGenerator == 6) {
-                    console.log("6 was generated making our random letter í!");
-                    document.getElementById("accentation").innerHTML = "í";
-                    document.getElementById("accentation").title = "Alt+0237";
-                    return inputNumber = 6;
-                }; if (randomNumberGenerator == 7) {
-                    console.log("7 was generated making our random letter Ó!");
-                    document.getElementById("accentation").innerHTML = "Ó";
-                    document.getElementById("accentation").title = "Alt+0211";
-                    return inputNumber = 7;
-                }; if (randomNumberGenerator == 8) {
-                    console.log("8 was generated making our random letter ó!");
-                    document.getElementById("accentation").innerHTML = "ó";
-                    document.getElementById("accentation").title = "Alt+0243";
-                    return inputNumber = 8;
-                }; if (randomNumberGenerator == 9) {
-                    console.log("9 was generated making our random letter Ú!");
-                    document.getElementById("accentation").innerHTML = "Ú";
-                    document.getElementById("accentation").title = "Alt+0218";
-                    return inputNumber = 9;
-                }; if (randomNumberGenerator == 10) {
-                    console.log("10 was generated making our random letter ú!");
-                    document.getElementById("accentation").innerHTML = "ú";
-                    document.getElementById("accentation").title = "Alt+0250";
-                    return inputNumber = 10;
-                }; if (randomNumberGenerator == 11) {
-                    console.log("11 was generated making our random letter Ñ!");
-                    document.getElementById("accentation").innerHTML = "Ñ";
-                    document.getElementById("accentation").title = "Alt+0209";
-                    return inputNumber = 11;
-                }; if (randomNumberGenerator == 12) {
-                    console.log("12 was generated making our random letter ñ!");
-                    document.getElementById("accentation").innerHTML = "ñ";
-                    document.getElementById("accentation").title = "Alt+0241";
-                    return inputNumber = 12;
-                }; if (randomNumberGenerator == 13) {
-                    console.log("13 was generated making our random letter Ü!");
-                    document.getElementById("accentation").innerHTML = "Ü";
-                    document.getElementById("accentation").title = "Alt+0220";
-                    return inputNumber = 13;
-                }; if (randomNumberGenerator == 14) {
-                    console.log("14 was generated making our random letter ü!");
-                    document.getElementById("accentation").innerHTML = "ü";
-                    document.getElementById("accentation").title = "Alt+0252";
-                    return inputNumber = 14;
-                }; if (randomNumberGenerator == 15) {
-                    console.log("15 was generated making our random letter ¡!");
-                    document.getElementById("accentation").innerHTML = "¡";
-                    document.getElementById("accentation").title = "Alt+0161";
-                    return inputNumber = 15;
-                }; if (randomNumberGenerator == 16) {
-                    console.log("16 was generated making our random letter ¿!");
-                    document.getElementById("accentation").innerHTML = "¿";
-                    document.getElementById("accentation").title = "Alt+0191";
-                    return inputNumber = 16;
-                };
+                if (random == 1) {
+                    document.getElementById("character").innerHTML = "Á";
+                    return randomresult = 1;
+                } if (random == 2) {
+                    document.getElementById("character").innerHTML = "á";
+                    return randomresult = 2;
+                } if (random == 3) {
+                    document.getElementById("character").innerHTML = "É";
+                    return randomresult = 3;
+                } if (random == 4) {
+                    document.getElementById("character").innerHTML = "é";
+                    return randomresult = 4;
+                } if (random == 5) {
+                    document.getElementById("character").innerHTML = "Í";
+                    return randomresult = 5;
+                } if (random == 6) {
+                    document.getElementById("character").innerHTML = "í";
+                    return randomresult = 6;
+                } if (random == 7) {
+                    document.getElementById("character").innerHTML = "Ó";
+                    return randomresult = 7;
+                } if (random == 8) {
+                    document.getElementById("character").innerHTML = "ó";
+                    return randomresult = 8;
+                } if (random == 9) {
+                    document.getElementById("character").innerHTML = "Ú";
+                    return randomresult = 9;
+                } if (random == 10) {
+                    document.getElementById("character").innerHTML = "ú";
+                    return randomresult = 10;
+                } if (random == 11) {
+                    document.getElementById("character").innerHTML = "Ñ";
+                    return randomresult = 11;
+                } if (random == 12) {
+                    document.getElementById("character").innerHTML = "ñ";
+                    return randomresult = 12;
+                } if (random == 13) {
+                    document.getElementById("character").innerHTML = "Ü";
+                    return randomresult = 13;
+                } if (random == 14) {
+                    document.getElementById("character").innerHTML = "ü";
+                    return randomresult = 14;
+                } if (random == 15) {
+                    document.getElementById("character").innerHTML = "¡";
+                    return randomresult = 15;
+                } if (random == 16) {
+                    document.getElementById("character").innerHTML = "¿";
+                    return randomresult = 16;
+                }
             }
         }
-        function checkEvent(){
-            if (inputNumber == 1){
-                if (InputID.value === "0193" || InputID.value === "Á"){ 
-                    startEvent()
+        function check(){
+            if (randomresult == 1) {
+                if (document.getElementById("input").value === "0193" || document.getElementById("input").value === "Á") { 
+                    start()
                 }
-            }if (inputNumber == 2){
-                if (InputID.value === "0225" || InputID.value === "á"){
-                    startEvent()
+            } if (randomresult == 2){
+                if (document.getElementById("input").value === "0225" || document.getElementById("input").value === "á") {
+                    start()
                 }
-            }if (inputNumber == 3){
-                if (InputID.value === "0201" || InputID.value === "É"){
-                    startEvent()
+            } if (randomresult == 3){
+                if (document.getElementById("input").value === "0201" || document.getElementById("input").value === "É") {
+                    start()
                 }
-            }if (inputNumber == 4){
-                if (InputID.value === "0233" || InputID.value === "é"){
-                    startEvent()
+            } if (randomresult == 4){
+                if (document.getElementById("input").value === "0233" || document.getElementById("input").value === "é") {
+                    start()
                 }
-            }if (inputNumber == 5){
-                if (InputID.value === "0205" || InputID.value === "Í"){
-                    startEvent()
+            } if (randomresult == 5){
+                if (document.getElementById("input").value === "0205" || document.getElementById("input").value === "Í") {
+                    start()
                 }
-            }if (inputNumber == 6){
-                if (InputID.value === "0237" || InputID.value === "í"){
-                    startEvent()
+            } if (randomresult == 6){
+                if (document.getElementById("input").value === "0237" || document.getElementById("input").value === "í") {
+                    start()
                 }
-            }if (inputNumber == 7){
-                if (InputID.value === "0211" || InputID.value === "Ó"){
-                    startEvent()
+            } if (randomresult == 7){
+                if (document.getElementById("input").value === "0211" || document.getElementById("input").value === "Ó") {
+                    start()
                 }
-            }if (inputNumber == 8){
-                if (InputID.value === "0243" || InputID.value === "ó"){
-                    startEvent()
+            } if (randomresult == 8){
+                if (document.getElementById("input").value === "0243" || document.getElementById("input").value === "ó") {
+                    start()
                 }
-            }if (inputNumber == 9){
-                if (InputID.value === "0218" || InputID.value === "Ú"){
-                    startEvent()
+            } if (randomresult == 9){
+                if (document.getElementById("input").value === "0218" || document.getElementById("input").value === "Ú") {
+                    start()
                 }
-            }if (inputNumber == 10){
-                if (InputID.value === "0250" || InputID.value === "ú"){
-                    startEvent()
+            } if (randomresult == 10){
+                if (document.getElementById("input").value === "0250" || document.getElementById("input").value === "ú") {
+                    start()
                 }
-            }if (inputNumber == 11){
-                if (InputID.value === "0209" || InputID.value === "Ñ"){
-                    startEvent()
+            } if (randomresult == 11){
+                if (document.getElementById("input").value === "0209" || document.getElementById("input").value === "Ñ") {
+                    start()
                 }
-            }if (inputNumber == 12){
-                if (InputID.value === "0241" || InputID.value === "ñ"){
-                    startEvent()
+             }if (randomresult == 12){
+                if (document.getElementById("input").value === "0241" || document.getElementById("input").value === "ñ") {
+                    start()
                 }
-            }if (inputNumber == 13){
-                if (InputID.value === "0220" || InputID.value === "Ü"){
-                    startEvent()
+            } if (randomresult == 13){
+                if (document.getElementById("input").value === "0220" || document.getElementById("input").value === "Ü") {
+                    start()
                 }
-            }if (inputNumber == 14){
-                if (InputID.value === "0252" || InputID.value === "ü"){
-                    startEvent()
+            } if (randomresult == 14){
+                if (document.getElementById("input").value === "0252" || document.getElementById("input").value === "ü") {
+                    start()
                 }
-            }if (inputNumber == 15){
-                if (InputID.value === "0161" || InputID.value === "¡"){
-                    startEvent()
+            } if (randomresult == 15){
+                if (document.getElementById("input").value === "0161" || document.getElementById("input").value === "¡") {
+                    start()
                 }
-            }if (inputNumber == 16){
-                if (InputID.value === "0191" || InputID.value === "¿"){
-                    startEvent()
+            } if (randomresult == 16){
+                if (document.getElementById("input").value === "0191" || document.getElementById("input").value === "¿") {
+                    start()
                 }
             }
-            InputID.value = "";
-            return ghostnum = inputNumber;
+            document.getElementById("input").value = "";
+            return ghost = randomresult;
+        }
+        function dark(){
+            if (themeCounter == 0) {
+                themeCounter = 1;
+                document.body.classList.add("darkTheme")
+                document.getElementById("input").classList.add("darkMain")
+                document.getElementById("button").classList.add("darkMain")
+                document.getElementById("table").classList.add("darkMain")
+            } else {
+                themeCounter = 0;
+                document.body.classList.remove("darkTheme")
+                document.getElementById("input").classList.remove("darkMain")
+                document.getElementById("button").classList.remove("darkMain")
+                document.getElementById("table").classList.remove("darkMain")
+            }
+        }
+        function help(){
+            if (tableCounter == 0) {
+                tableCounter = 1;
+                document.getElementById("table").classList.remove("invisible")
+                document.getElementById("table").classList.add("visible")
+                document.cookie = "table=visible"
+            } else {
+                tableCounter = 0;
+                document.getElementById("table").classList.remove("visible")
+                document.getElementById("table").classList.add("invisible")
+                document.cookie = "table=invisible"
+            }
         }
         document.onkeydown = checkKey;
-
         function checkKey(e) {
             if (e.keyCode == '13') {
-                checkEvent();
+                check();
             } if (e.keyCode == '110') {
                 e.preventDefault();
-                InputID.value = "";
-            } if (e.getModifierState("NumLock")) {
-                reminderDiv.style.display = "none";
-            } else {
-                reminderDiv.style.display = "block";
+                document.getElementById("input").value = "";
+            } if (e.keyCode == '48' || e.keyCode == '49' || e.keyCode == '50' || e.keyCode == '51' || e.keyCode == '52' || e.keyCode == '53' || e.keyCode == '54' || e.keyCode == '55' || e.keyCode == '56' || e.keyCode == '57') {
+                e.preventDefault();
             }
         }
-        function inputEvent(){
-            if (inputCounter == 0){
-                InputID.placeholder = "";
-                startEvent()
-                inputCounter = 1;
-            }
-        }
-        function plugEvent(){
-            window.open("https://linktr.ee/Crystallizer954/");
-        }
-        var InputIDplaceholder = "Click here to start!";
-        var randomInputSplashGenerator = Math.floor(Math.random() * (5 - 1) + 1);
-        if (randomInputSplashGenerator == 1){
-            var InputIDplaceholder = "press . on the numpad to clear your answer!";
-        }if (randomInputSplashGenerator == 2){
-            var InputIDplaceholder = "click the ? at the top right to see a list of Alt Codes!";
-        }if (randomInputSplashGenerator == 3){
-            var InputIDplaceholder = "you can submit your answer by pressing enter on the keyboard!";
-        }if (randomInputSplashGenerator == 4){
-            var InputIDplaceholder = "Brown Sugar Cinnamon Pop-Tarts are the best!";
-        }
-        //The original six messages that would be displayed were: #1. don't use on phone, #2. △, #3. 有個難忘的昨天,有個快樂的今天,有個美好的明 天。南無阿彌陀佛, #4. go to https://grabber.zone/, #5. Brown Sugar Cinnamon Pop Tarts are the best kind., #6. subscribe to Kitty225Again on YouTube! 
-        InputID.placeholder = "Click here to start! Also, " + InputIDplaceholder;
-        function helpEvent(){
-            if (helpvar == 0){
-                helptable.style.display = "block";
-                helpvar = 1;
-            }else{
-                helptable.style.display = "none";
-                helpvar = 0;
-            }
-        }
+        window.addEventListener('contextmenu', (event) => {
+            event.preventDefault()
+        });
     </script>
 </html>
